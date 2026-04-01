@@ -6,6 +6,10 @@ const minhaIdade = 21
 const saoIguaisComparacao = idadeVinny == minhaIdade
 console.log(`Idade e igual? ${saoIguaisComparacao}`)
 
+//Diferente de 
+const saoDiferentes = idadeVinny != minhaIdade
+console.log(`Sao diferentes? ${saoDiferentes}`)
+
 //Operador de maior que >
 const comparacaoIdadeMaior = idadeVinny > minhaIdade
 console.log(`Idade de Vinny e maior que a minha? ${comparacaoIdadeMaior}`)
@@ -26,8 +30,10 @@ console.log(`Meu irmao e maior de idade? ${irmaoMaiorDeIdade}`)
 const numerico = 20
 const alfa     ="20"
 
+//Igual, mas sem verificar os tipos, apenas valores
 const igualdade = numerico == alfa
 console.log(`Numerico e igual a alfa: ${igualdade}`)
 
+//Estritamente igual
 const estritamenteIgual = numerico === alfa
-console.log(`Numerico e estritamente igual a alfa: ${igualdade}`)
+console.log(`Numerico e estritamente igual a alfa: ${estritamenteIgual}`)
