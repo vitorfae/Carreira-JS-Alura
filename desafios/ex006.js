@@ -47,7 +47,7 @@ if(media >= 7){
 
 //AT-06
 const nomesAt06 = ['Vitor', 'Lucia', 'Camila', 'Getulio', 'Luis']
-// Usa calback
+// Usa calback - nome é igual ao valor do array, se deixar o mouse sobre o froEach ele explica
 nomesAt06.forEach((nome) => {
     console.log(`Ola, ${nome}`)
 })
@@ -60,3 +60,56 @@ const valoresComDesconto = valoresOriginal.map((valor) => valor * 0.9)
 console.log(`Os valores com descontos sao: ${valoresComDesconto}`)
 
 //AT-08
+//FUNCIONANDO, MAS EXIBE SÓ OS NUMEROS
+//const idades = [20, 17, 18, 15, 11, 8, 27]
+
+//idades.filter((idade) =>{
+//    if (idade >= 18){
+//        console.log(idade)
+//    }
+//})
+
+// Funcionando, exibe a mensagem pois está passando a idade via return.
+//const idades = [20, 17, 18, 15, 11, 8, 27]
+//
+//const maioresDeIdade = idades.filter((idade) =>{
+//    if (idade >= 18){
+//        return idade
+//    }
+//})
+//console.log(`As idades maiores ou igual a 18 sao: ${maioresDeIdade}`)
+
+//Funcionando e usando if ternario com return
+const idades = [20, 17, 18, 15, 11, 8, 27]
+// explicando:
+//const maiorDeIdade recebe o array idades com o metodo filter, onde o mesmo recebe idade como parametro de valor, onde é feito
+//um if ternario que vai ver as idades maiores ou iguais a 18 anos e retornar se verdadeiro. Nulo é usado para nao retornar nada
+const maiorDeIdade = idades.filter((idade) => idade >= 18 ? idade : null)
+console.log(`As idades maiores ou igual a 18 sao: ${maiorDeIdade}`)
+
+//AT-09
+const precoProdutos = [100, 50, 35, 40, 20]
+// Armazenando valor total da compra
+let valorSomaProdutos = 0
+
+for(preco of precoProdutos){
+    valorSomaProdutos += preco
+}
+//Aplicando desconto de 20% sobre o valor final da compra
+let valorFinalComDesconto = valorSomaProdutos * (80 / 100) // valor toral * percentual de desconto que é 20% -> por isso 80/100 -> que corresponde a 0,8.
+
+//Exibindo na tela o resultado do valor final com desconto
+console.log(`O valor final é R$${valorSomaProdutos}, mas com os 20% de desconto fica: R$${valorFinalComDesconto}`)
+
+
+//AT-10
+//Criando tarefas
+const tarefas  =  ['Caminhar', 'Lavar a louça', 'Tomar banho', 'Academia', 'Estudar']
+//Criando valores booleanos para saber se foram executas as tarefas ou não
+const executadas = [0, 1, 1, 0, 0]
+// tarefas nao executadas vai receber o array tarefas filtrado com tarefa = nome da tarefa (valor) e o indice do array
+// temos um callback onde esta sendo feito um if ternario testando se no mesmo indice mas na outra tabela for igual a 0 ele vai retornar a tarefa
+// pois se na outra tabela no mesmo indice estiver 0 a tarefa ainda não foi executada.
+const tarefasNaoExecutas = tarefas.filter((tarefa, indice) => executadas[indice] == 0 ? tarefa : null)
+
+console.log(`As tarefas a serem executas são: ${tarefasNaoExecutas}`)
