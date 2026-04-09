@@ -79,4 +79,45 @@ for(const pessoa of pessoas){
 console.log('-------------------------------------------')
 
 
-//AT-08
+//AT-08 - Criando objeto usuario e definido saudacao como uma funçao 
+const usuario = {
+    nome: 'Vitor',
+    saudacao: function(){
+        console.log('Exibe mensagem da funcao armazenada em saudação e o', this.nome)
+    }
+}
+//Fazer a chamada da funçao com objeto . o atributo/chave sendo chamado com () pois ele tem uma função.
+//Tentei chamar com o console.log antes da chamada, mas da erro, pois a função já tem.
+usuario.saudacao()
+
+//Criando espaçamento entre exibiçao do console.log
+console.log('-------------------------------------------')
+
+
+//AT-09
+//For in só funciona com objetos - para chave em pessoa - ele retorna o atributo/chave.
+//Usamos chave com notacao de colchetes no objeto pessoa, para trazer o valor daquela chave.
+for(let chave in pessoa){
+    console.log(`Chave: ${chave}, valor: ${pessoa[chave]}`)
+}
+
+//Criando espaçamento entre exibiçao do console.log
+console.log('-------------------------------------------')
+
+
+//AT-10 - Criando objeto produto para ver o valor total da compra
+const produto = {
+    preco: 100,
+    quantidade: 2
+}
+
+//Usei um for para adicionar os valores em um totalizador
+let valorTotFor = 0
+for(let i = 0; i < produto.quantidade; i++){
+    valorTotFor += produto.preco
+}
+console.log(`O valor total da compra com for é: R$${valorTotFor}`)
+
+// Usei um let direto para a multiplicação
+let valorTot = produto.preco * produto.quantidade
+console.log('Calculo direto com let', valorTot)
