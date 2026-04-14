@@ -45,11 +45,12 @@ console.log(vitor1)
 console.log(vitor2)
 
 console.log('--------------------------------------------')
-console.log('             ATUALIZANDO OBJETO             ')
+console.log('             ATUALIZANDO OBJETO             ') //Editando uma parte e adicionando outra
 
 //Atualizando dados de Vitor1
 vitor1 = {
-    ...vitor2, // Copiando dados do objeto 2, já que ambos são iguais
+    // Copiando dados do objeto 2
+    ...vitor2, // Caso eu queira usar os dados do mesmo objeto, só alterar e adicionar referenciar o ...vitor1
     profissao: 'Desenvolvedor Senior', //Atualizando cargo
     possuiCNH: true //Adicionando novo valor no objeto 1
 }
